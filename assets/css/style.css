@@ -100,14 +100,14 @@ html, body {
 
     /* Reducimos tamaño del logo */
     .overlay .logo {
-        width: 90px; /* 50% de 180px */
+        width: 120px; /* 50% de 180px */
         padding-bottom: 20px; /* mitad del espacio */
     }
 
     /* Reducimos tipografía */
     .overlay .text,
     .overlay .contact {
-        font-size: 9.5px; /* 50% de 19px */
+        font-size: 12px; /* 50% de 19px */
     }
 
     /* Reducimos grosor de línea */
