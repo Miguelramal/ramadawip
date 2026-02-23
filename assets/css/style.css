@@ -100,19 +100,19 @@ html, body {
 
     /* Reducimos tamaño del logo */
     .overlay .logo {
-        width: 120px; /* 50% de 180px */
+        width: 140px; /* 50% de 180px */
         padding-bottom: 20px; /* mitad del espacio */
     }
 
     /* Reducimos tipografía */
     .overlay .text,
     .overlay .contact {
-        font-size: 12px; /* 50% de 19px */
+        font-size: 14px; /* 50% de 19px */
     }
 
     /* Reducimos grosor de línea */
     .overlay .line {
-        border-width: 1px;
+        border-width: 1.2px;
     }
 
 }
