@@ -1,0 +1,88 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* evita scroll vertical */
+}
+
+/* Contenedor del carrusel */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Cada imagen */
+.carousel img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100vh;
+    width: auto;
+    z-index: 1;
+}
+
+/* Overlay sobre el carrusel */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 30;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 24px 0 24px; /* 40px arriba, 16px laterales */
+    box-sizing: border-box; /* incluye padding en altura total */
+}
+
+.overlay .element {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px; /* más cerca que antes */
+    padding-bottom: 0px;
+}
+
+/* Permitir clics en enlaces dentro del overlay */
+.overlay .contact {
+    pointer-events: auto;
+}
+
+/* Tipografía uniforme */
+.overlay .text,
+.overlay .contact {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 19px;
+    color: #D1D1D1;
+    margin-bottom: 2px; /* controla espacio inferior */
+}
+
+/* Logo */
+.overlay .logo {
+    width: 180px;
+    padding-bottom: 40px; /* espacio debajo del logo */
+}
+
+/* Línea de ancho completo */
+.overlay .line {
+    width: 100%; /* ahora ocupa todo el ancho del overlay */
+    border: 1.8px solid #D1D1D1;
+    margin-top: 0;    /* elimina margen arriba */
+    margin-bottom: 2px; /* controla espacio inferior */
+}
+
+/* Bloques de texto */
+.overlay .block {
+    width: 100%; /* ancho completo del overlay */
+}
+
+/* Contactos (mail + teléfono) */
+.overlay .contact a {
+    color: #D1D1D1;
+    text-decoration: none;
+}
