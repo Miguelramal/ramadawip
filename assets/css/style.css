@@ -86,3 +86,33 @@ html, body {
     color: #D1D1D1;
     text-decoration: none;
 }
+
+/* =========================
+   MOBILE VERSION
+========================= */
+
+@media (max-width: 768px) {
+
+    /* Reducimos tamaño general del overlay */
+    .overlay {
+        padding: 12px 12px 0 12px; /* mitad del padding */
+    }
+
+    /* Reducimos tamaño del logo */
+    .overlay .logo {
+        width: 90px; /* 50% de 180px */
+        padding-bottom: 20px; /* mitad del espacio */
+    }
+
+    /* Reducimos tipografía */
+    .overlay .text,
+    .overlay .contact {
+        font-size: 9.5px; /* 50% de 19px */
+    }
+
+    /* Reducimos grosor de línea */
+    .overlay .line {
+        border-width: 1px;
+    }
+
+}
