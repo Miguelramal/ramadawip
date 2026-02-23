@@ -88,8 +88,24 @@ html, body {
 }
 
 /* =========================
-   MOBILE VERSION
+   VERSION < 1440px
 ========================= */
+
+@media (max-width: 1440px) {
+
+    .overlay .logo {
+        width: 144px; /* -20% */
+    }
+
+    .overlay .text,
+    .overlay .contact {
+        font-size: 15px; /* -20% */
+    }
+    
+    .overlay .line {
+        border-width: 1.4px;
+    }
+}
 
 @media (max-width: 768px) {
 
