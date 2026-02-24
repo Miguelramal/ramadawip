@@ -1,3 +1,7 @@
+:root {
+    --overlay-color: #2858ac;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -25,6 +29,14 @@ html, body {
     z-index: 1;
 }
 
+/* Las imágenes “anchas” ocupan ancho completo */
+.carousel img.wide {
+    width: 100%;
+    height: auto;      /* mantiene proporción */
+    left: 0;
+    transform: none;   /* ya no necesitamos centrar X */
+}
+
 /* Overlay sobre el carrusel */
 .overlay {
     position: absolute;
@@ -34,6 +46,9 @@ html, body {
     height: 100%;
     z-index: 30;
     pointer-events: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     display: flex;
     flex-direction: column;
     padding: 24px 24px 0 24px; /* 40px arriba, 16px laterales */
@@ -57,23 +72,23 @@ html, body {
 .overlay .contact {
     font-family: Arial, sans-serif;
     font-weight: bold;
-    font-size: 19px;
-    color: #D1D1D1;
+    font-size: 18px;
+    color: var(--overlay-color);
     margin-bottom: 2px; /* controla espacio inferior */
 }
 
 /* Logo */
 .overlay .logo {
-    width: 180px;
-    padding-bottom: 40px; /* espacio debajo del logo */
+    width: 240px;
+    padding-bottom: 80px; /* espacio debajo del logo */
+    padding-top: 80px;
+    color: var(--overlay-color);
 }
 
-/* Línea de ancho completo */
-.overlay .line {
-    width: 100%; /* ahora ocupa todo el ancho del overlay */
-    border: 1.8px solid #D1D1D1;
-    margin-top: 0;    /* elimina margen arriba */
-    margin-bottom: 2px; /* controla espacio inferior */
+/* Forzamos que todos los paths dentro del SVG hereden currentColor */
+.overlay .logo svg path,
+.overlay .logo svg rect {
+    fill: currentColor;
 }
 
 /* Bloques de texto */
@@ -83,7 +98,7 @@ html, body {
 
 /* Contactos (mail + teléfono) */
 .overlay .contact a {
-    color: #D1D1D1;
+    color: var(--overlay-color);
     text-decoration: none;
 }
 
@@ -94,7 +109,9 @@ html, body {
 @media (max-width: 1440px) {
 
     .overlay .logo {
-        width: 144px; /* -20% */
+        width: 200px; /* -20% */
+        padding-bottom: 70px;
+        padding-top: 70px;
     }
 
     .overlay .text,
@@ -116,8 +133,9 @@ html, body {
 
     /* Reducimos tamaño del logo */
     .overlay .logo {
-        width: 140px; /* 50% de 180px */
-        padding-bottom: 20px; /* mitad del espacio */
+        width: 180px; /* 50% de 180px */
+        padding-bottom: 50px; /* mitad del espacio */
+        padding-top: 50px;
     }
 
     /* Reducimos tipografía */
@@ -131,4 +149,11 @@ html, body {
         border-width: 1.2px;
     }
 
+    .carousel img.wide {
+        width: auto;       /* vuelve a proporcional */
+        height: 100vh;     /* altura completa */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
 }
